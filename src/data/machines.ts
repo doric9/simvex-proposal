@@ -1,0 +1,117 @@
+import type { Machine, MachineId } from '@/types'
+
+export const machines: Record<MachineId, Machine> = {
+  'v4-engine': {
+    id: 'v4-engine',
+    name: 'V4 Engine',
+    nameKo: 'V4 엔진',
+    description: 'A four-cylinder V-configuration internal combustion engine, commonly used in motorcycles and automobiles.',
+    descriptionKo: '모터사이클과 자동차에 널리 사용되는 V형 4기통 내연기관입니다.',
+    thumbnail: '/models/v4-engine/thumbnail.png',
+    modelPath: '/models/v4-engine',
+    assemblyDiagrams: ['V4실린더 엔진 조립도.png'],
+    parts: [
+      'crankshaft',
+      'connecting-rod',
+      'connecting-rod-cap',
+      'conrod-bolt',
+      'piston',
+      'piston-pin',
+      'piston-ring',
+    ],
+  },
+  'drone': {
+    id: 'drone',
+    name: 'Drone',
+    nameKo: '드론',
+    description: 'A quadcopter drone with multi-rotor propulsion system for aerial photography and surveillance.',
+    descriptionKo: '항공 촬영 및 감시용 멀티로터 추진 시스템을 갖춘 쿼드콥터 드론입니다.',
+    thumbnail: '/models/drone/thumbnail.png',
+    modelPath: '/models/drone',
+    assemblyDiagrams: [
+      '조립도1.png', '조립도2.png', '조립도3.png', '조립도4.png',
+      '조립도5.png', '조립도6.png', '조립도7.png', '조립도8.png',
+    ],
+    parts: [
+      'main-frame',
+      'main-frame-mir',
+      'arm-gear',
+      'leg',
+      'gearing',
+      'impeller-blade',
+      'beater-disc',
+      'nut',
+      'screw',
+    ],
+  },
+  'robot-arm': {
+    id: 'robot-arm',
+    name: 'Robot Arm',
+    nameKo: '로봇 암',
+    description: 'An articulated robotic arm with multiple degrees of freedom for industrial automation.',
+    descriptionKo: '산업 자동화를 위한 다자유도 관절형 로봇 암입니다.',
+    thumbnail: '/models/robot-arm/thumbnail.png',
+    modelPath: '/models/robot-arm',
+    assemblyDiagrams: [],
+    parts: [],
+  },
+  'robot-gripper': {
+    id: 'robot-gripper',
+    name: 'Robot Gripper',
+    nameKo: '로봇 그리퍼',
+    description: 'A mechanical gripper end-effector for robotic manipulation tasks.',
+    descriptionKo: '로봇 조작 작업을 위한 기계식 그리퍼 엔드이펙터입니다.',
+    thumbnail: '/models/robot-gripper/thumbnail.png',
+    modelPath: '/models/robot-gripper',
+    assemblyDiagrams: [],
+    parts: [],
+  },
+  'suspension': {
+    id: 'suspension',
+    name: 'Suspension System',
+    nameKo: '서스펜션 시스템',
+    description: 'An automotive suspension system with coil springs and dampers.',
+    descriptionKo: '코일 스프링과 댐퍼가 포함된 자동차 서스펜션 시스템입니다.',
+    thumbnail: '/models/suspension/thumbnail.png',
+    modelPath: '/models/suspension',
+    assemblyDiagrams: [],
+    parts: [],
+  },
+  'leaf-spring': {
+    id: 'leaf-spring',
+    name: 'Leaf Spring',
+    nameKo: '판 스프링',
+    description: 'A multi-leaf spring suspension component commonly used in trucks and heavy vehicles.',
+    descriptionKo: '트럭과 대형 차량에 널리 사용되는 다중 판 스프링 서스펜션 부품입니다.',
+    thumbnail: '/models/leaf-spring/thumbnail.png',
+    modelPath: '/models/leaf-spring',
+    assemblyDiagrams: [],
+    parts: [],
+  },
+  'machine-vice': {
+    id: 'machine-vice',
+    name: 'Machine Vice',
+    nameKo: '기계 바이스',
+    description: 'An industrial clamping device used to hold workpieces during machining operations.',
+    descriptionKo: '가공 작업 중 공작물을 고정하는 데 사용되는 산업용 클램핑 장치입니다.',
+    thumbnail: '/models/machine-vice/thumbnail.png',
+    modelPath: '/models/machine-vice',
+    assemblyDiagrams: [],
+    parts: [],
+  },
+}
+
+export const machineList = Object.values(machines)
+
+export const getMachine = (id: MachineId): Machine | undefined => machines[id]
+
+// Priority order for MVP implementation
+export const machinePriority: MachineId[] = [
+  'v4-engine',
+  'robot-gripper',
+  'drone',
+  'machine-vice',
+  'robot-arm',
+  'suspension',
+  'leaf-spring',
+]
