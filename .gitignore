@@ -37,3 +37,9 @@ yarn-error.log*
 
 # Testing
 coverage
+
+# Planning documents (internal)
+*.docx
+*.xlsx
+*.pdf
+!README.pdf
